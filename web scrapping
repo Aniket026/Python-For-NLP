@@ -1,0 +1,62 @@
+
+#web scrapping (data Acuization)
+
+#it will give index of charactors
+
+sen="We are Learning textmining from sanjivano AI"
+#if want to know position of Word
+sen.index("Learning")
+
+#token
+
+#it will give the index of word
+sen.split().index("from")
+
+#-----------------------------------------------------------------
+
+#Reverse Word by index
+sen.split()[2][::-1]
+
+#-----------------------------------------------------------------
+
+#Reverse sen.
+sen.split()[::-1]
+
+#-----------------------------------------------------------------
+
+#print First And Last Word of sentences
+word=sen.split()  #tokenization
+first_word=word[0]
+first_word
+last_word=word[-1]
+last_word
+
+#-----------------------------------------------------------------
+
+#concat first and last words
+concat_word=first_word+ " "+last_word
+concat_word
+
+#-----------------------------------------------------------------
+
+#We want to print even number words
+[word[i] for i in range (len(word)) if i%2==0]
+
+#-----------------------------------------------------------------
+
+#display only one word
+sen[-3::]
+
+#-----------------------------------------------------------------
+
+#reverce
+sen[::-1]
+#'IA onavijnas morf gninimtxet gninraeL era eW'
+
+#-----------------------------------------------------------------
+
+#.join method
+print( " ".join(word[::-1] for word in word))
+
+#-----------------------------------------------------------------
+
