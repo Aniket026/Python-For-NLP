@@ -1,0 +1,51 @@
+ 
+import nltk
+nltk.download('punkt')
+from nltk import word_tokenize
+sentence4=word_tokenize("Ntural languaga is the moast populer language")
+print( " ".join([spell(sentence4) for sentence4 in sentence4]))
+
+#-----------------------------------------------------------------
+#stemming
+
+stemmer=nltk.stem.PorterStemmer()
+stemmer.stem("programming")
+stemmer.stem("programmed")
+stemmer.stem("programmed")
+
+#Out[87]: 'program'
+#stemmer.stem("Jumped")
+stemmer.stem("Jumped")
+#Out[88]: 'jump'
+
+#-----------------------------------------------------------------
+
+##lematizer --interview
+#lematizer looks into dict. words
+nltk.download("wordnet")
+from nltk.stem.wordent import WordNetLemmatizer
+lemmatizer=WordNetLemmatizer()
+lemmatizer.lemmatizer("programed")
+
+#-----------------------------------------------------------------
+
+nltk.download("maxent_ne_chunker")
+nltk.download('words')
+sentance5="We are learning NLP in Python By sanjivaniAI"
+nltk.download("averaged_perceptron_tagger")
+words=word_tokenize(sentance5)
+words=nltk.pos_tag(words)
+i=nltk.ne_chunk(words,binary=True)
+[a for a in i if len(a)==1]
+
+#-----------------------------------------------------------------
+##sentance Tokenization
+#separating sentance
+
+from nltk.tokenize import sent_tokenize
+sent=sent_tokenize("we are learning python . It tech by radhakrishna Naik sir .")
+sent
+
+#-----------------------------------------------------------------
+
+
