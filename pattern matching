@@ -1,0 +1,53 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun 14 09:11:50 2024
+
+@author: aniket '
+
+"""
+
+#removing Special characters
+
+import re #regex
+chat1="Hello , I am having an issue with my order # 9897773477"
+pattern='order[^\d]*(\d*)'
+matches=re.findall(pattern,chat1)
+matches
+
+chat2 = "Hello I am having an issue with  my number 9897773477"
+pattern = 'order[^\d]*(\d*)'
+matches = re.findall(pattern ,chat2)
+matches
+
+
+chat3="Hello  9897773477 , I am having an issue with  my number"
+pattern='Hello [^\d]*(\d*)'
+matches=re.findall(pattern,chat3)
+matches
+
+def pattern_match(pattern,text):
+    matches=re.findall(pattern,text)
+    if matches:
+        return matches[0]
+pattern_match(pattern,chat3)
+    
+
+
+#-----------------------------------------------------
+import re
+
+pattrn2="[a-zA-Z0-9]*@[a-zA-Z]*\.[a-z]*"
+pattrn3="\d{10}|\(\d{3}\)-\d{3}-\d{4}"
+chat1=" my name is aniket and my email is aniket23@gmail.com"
+chat2=" my name is rushi  and my email is rushi11@outlook.com"
+chat3=" my name is akash (123)-233-4566 and my email is akash23@.com"
+
+def pattern_match(pattern,text):
+    matches=re.findall(pattern,text)
+    if matches:
+        return matches[0]
+pattern_match(pattrn2,chat3)
+pattern_match(pattrn2,chat2)
+pattern_match(pattrn2,chat1)
+
+pattern_match(pattrn3,chat3)
